@@ -7,20 +7,20 @@ import android.view.View
 import androidx.navigation.ActivityNavigator
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_second.*
 
-class MainActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        button.setOnClickListener { view: View ->
+        setContentView(R.layout.activity_second)
+        button2.setOnClickListener {view: View ->
             val activityNavigator = ActivityNavigator( this!!)
             activityNavigator.navigate(
                 activityNavigator.createDestination().setIntent(
                     Intent(
                         this!!,
-                        SecondActivity::class.java
+                        ThirdActivity::class.java
                     )
                 ), null, null, null
             )
@@ -28,11 +28,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
-/*
-* Note: For one activity there is only one Navigation Graph is used i.e for another activity you have to
-* use new activity.
-* You can use multiple fragment in one Navigation graph also multiple navigation graph for multiple
-* activity and different fragment within each activity
-*
-* */
